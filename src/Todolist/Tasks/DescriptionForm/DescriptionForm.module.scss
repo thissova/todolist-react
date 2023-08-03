@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@300&family=Ubuntu:wght@300&display=swap');
+.input{
+    font: 1rem/1em 'REM', sans-serif;
+    border:none;
+    padding: 5px;
+    background: none;
+    box-shadow: 0 4px 0 -3px #3F72AF;
+}
+.saveButton {
+    width: 35px;
+    height: 35px;
+    float: right;
+    cursor: pointer;
+}
+
+.deleteButton {
+    width: 35px;
+    height: 35px;
+    float: right;
+    cursor: pointer;
+}

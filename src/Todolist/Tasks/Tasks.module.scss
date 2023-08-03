@@ -1,4 +1,5 @@
-.taskTitle{
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@300&family=Ubuntu:wght@300&display=swap');
+.taskTitle {
     font-family: 'REM', sans-serif;
     padding: 10px;
     background: #d5d5d5;
@@ -6,20 +7,41 @@
     border-top-right-radius: 10px;
     font-size: 20px;
     font-weight: bold;
-    input{
+
+    input {
         width: 20px;
         height: 20px;
     }
+    .title{
+        padding-left: 10px;
+    }
 }
-.task{
+
+.task {
     align-items: center;
     margin-bottom: 10px;
 }
-.aboutTask{
+
+.aboutTask {
+    font-family: 'REM', sans-serif;
     background: #eeeeee;
     padding: 20px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     word-wrap: break-word;
+    align-items: center;
+    .editButton {
+        width: 35px;
+        height: 35px;
+        float: right;
+        cursor: pointer;
+    }
+
+    .deleteButton {
+        width: 35px;
+        height: 35px;
+        float: right;
+        cursor: pointer;
+    }
 }
 
