@@ -4,7 +4,7 @@ import styles from "./DescriptionForm.module.scss"
 import deleteButton from "../../../assets/deleteButton.png";
 import saveButton from "../../../assets/saveButton.png";
 
-const DescriptionForm = ({task, deactivateEditMode}) => {
+const DescriptionForm = ({task, deactivateEditMode, deleteTask}) => {
     const formik = useFormik({
         initialValues: {
             description: task.description
@@ -25,8 +25,8 @@ const DescriptionForm = ({task, deactivateEditMode}) => {
                 className={styles.input}
             />
 
-            <img alt={"deleteButton"} src={deleteButton} className={styles.deleteButton}/>
-            <img onClick={(formik.handleSubmit)} alt={"editButton"} src={saveButton} className={styles.saveButton} />
+            <img onClick={() => deleteTask(task.id)} alt={"deleteButton"} src={deleteButton} className={styles.deleteButton}/>
+            <img onClick={formik.handleSubmit} alt={"editButton"} src={saveButton} className={styles.saveButton} />
         </form>
     )
 }

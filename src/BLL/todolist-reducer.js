@@ -13,22 +13,29 @@ let initalState = {
 }
 const ADD_TASK = "ADD_TASK"
 const UPDATE_TASK = "UPDATE_TASK"
+const DELETE_TASK = "DELETE_TASK"
 let todolistReducer = (state = initalState, action) => {
-switch (action.type){
-    case UPDATE_TASK:
-        return {
-            ...state,
-            tasks: state.tasks.map((task) => ({
-                ...task,
-                description: task.id === action.id ? action.description: task.description
-            }))
-        }
-    default:
-        return state
+    switch (action.type) {
+        case UPDATE_TASK:
+            return {
+                ...state,
+                tasks: state.tasks.map((task) => ({
+                    ...task,
+                    description: task.id === action.id ? action.description : task.description
+                }))
+            }
+        case DELETE_TASK:
+            return {
+                ...state,
+                tasks: state.tasks.filter(task => task.id !== action.id)
+            }
+        default:
+            return state
 
-}
+    }
 }
 
 export const updateTask = (description, id) => ({type: UPDATE_TASK, id, description})
+export const deleteTask = (id) => ({type: DELETE_TASK, id})
 
 export default todolistReducer

@@ -1,35 +1,35 @@
 import React, {useState} from "react";
 import styles from "./Tasks.module.scss"
-import editButton from "../../assets/editButton.png"
-import deleteButton from "../../assets/deleteButton.png"
 import DescriptionForm from "./DescriptionForm/DescriptionForm";
+import Description from "./Description";
 
-const Tasks = ({tasks, updateTask}) => {
+const Tasks = ({tasks, updateTask, deleteTask}) => {
     let [editMode, setEditMode] = useState(false)
     let [editTask, setEditTask] = useState(null)
-    const onSubmit = (data) => {
+    const deactivateEditMode = (data) => {
         console.log(data)
         setEditMode(false)
-        debugger
         updateTask(data.description, editTask)
     }
-    return tasks.map(t => <div className={styles.task}>
+    const activateEditMode = () => {
+        setEditMode(true)
+
+    }
+    return tasks.map(task => <div className={styles.task}>
         <div className={styles.taskTitle}>
-            <input type={"checkbox"}/>
-            <span className={styles.title}>{t.title}</span>
+            <input disabled={editMode && editTask === task.id} key={task.id} type={"checkbox"} onChange={(event) => {
+                if (event.target.checked) {
+                    setTimeout(() => deleteTask(task.id), 1000)
+                }
+            }}/>
+            <span className={styles.title}>{task.title}</span>
         </div>
         <div className={styles.aboutTask}>
-            {editMode && editTask === t.id?
-                <DescriptionForm deactivateEditMode={onSubmit} task={t} editMode={editMode}/> :
-                <div><span className={styles.description}>{t.description}</span>
-                <img alt={"deleteButton"} src={deleteButton} className={styles.deleteButton}/>
-                <img alt={"editButton"} src={editButton} className={styles.editButton} onClick={() => {
-                    setEditMode(true)
-                    setEditTask(t.id)
-                }}/>
-                </div>
-                }
-
+            {editMode && editTask === task.id ?
+                <DescriptionForm deactivateEditMode={deactivateEditMode} task={task} deleteTask={deleteTask}/> :
+                <Description activateEditMode={activateEditMode} task={task} deleteTask={deleteTask}
+                             setEditTask={setEditTask}/>
+            }
         </div>
     </div>)
 }
