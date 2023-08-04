@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-gh-pagestodolist-react/static/css/main.c4a035cf.css",
+    "main.js": "/react-gh-pagestodolist-react/static/js/main.78ba8ccb.js",
+    "static/js/787.047a1a85.chunk.js": "/react-gh-pagestodolist-react/static/js/787.047a1a85.chunk.js",
+    "index.html": "/react-gh-pagestodolist-react/index.html",
+    "main.c4a035cf.css.map": "/react-gh-pagestodolist-react/static/css/main.c4a035cf.css.map",
+    "main.78ba8ccb.js.map": "/react-gh-pagestodolist-react/static/js/main.78ba8ccb.js.map",
+    "787.047a1a85.chunk.js.map": "/react-gh-pagestodolist-react/static/js/787.047a1a85.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c4a035cf.css",
+    "static/js/main.78ba8ccb.js"
+  ]
+}
