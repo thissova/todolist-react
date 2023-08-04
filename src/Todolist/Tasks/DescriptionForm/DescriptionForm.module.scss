@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=REM:wght@300&family=Ubuntu:wght@300&display=swap');
 .input{
+    width: 75%;
     font: 1rem/1em 'REM', sans-serif;
     border:none;
     padding: 5px;
@@ -7,9 +8,13 @@
     box-shadow: 0 4px 0 -3px #3F72AF;
 }
 .saveButton {
+    float: right;
+    border: none;
+    background: transparent;
+}
+.save {
     width: 35px;
     height: 35px;
-    float: right;
     cursor: pointer;
 }
 
@@ -18,4 +23,10 @@
     height: 35px;
     float: right;
     cursor: pointer;
+}
+
+.error{
+    font-size: 15px;
+    color: red;
+    font-weight: bold;
 }

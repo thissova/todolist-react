@@ -5,7 +5,7 @@ import editButton from "../../assets/editButton.png";
 
 const Description = ({task, deleteTask, activateEditMode, setEditTask}) => {
     return(
-        <div><span>{task.description}</span>
+        <div className={styles.descDiv}><span>{task.description}</span>
             <img alt={"deleteButton"} src={deleteButton} className={styles.deleteButton} onClick={(() => deleteTask(task.id))}/>
             <img alt={"editButton"} src={editButton} className={styles.editButton} onClick={() => {
                 activateEditMode()
